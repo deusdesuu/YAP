@@ -1,13 +1,18 @@
 open System
 (*
 //Сформировать список из названий дней недели
+let MakeAWeek : string list =
+    let week = ["monday"; "tuesday"; "wednesday"; "thursday"; "friday"; "saturday"; "sunday"]
+    week
+   
 [<EntryPoint>]
 let main argv =
-    let week = ["monday"; "tuesday"; "wednesday"; "thursday"; "friday"; "saturday"; "sunday"]
+    let week = MakeAWeek
     for day in week do
         printf "%s  " day
     0
 *)
+(*
 //Возвратить true, если в числе есть цифра k, и false — в противном случае
 let rec CheckNum num k: bool =
     if ((num % 10 = k)) then
@@ -42,3 +47,4 @@ let main argv =
     else
         printfn "Цифры k нет в данном числе"
     0
+*)
