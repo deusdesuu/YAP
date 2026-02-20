@@ -1,6 +1,8 @@
 open System
 (*
 //Сформировать список из названий дней недели
+//что-то придумать со списком
+//например через ввод номеров дней недели 1 3 2 1 -> пн, ср, вт, пн
 let MakeAWeek : string list =
     let week = ["monday"; "tuesday"; "wednesday"; "thursday"; "friday"; "saturday"; "sunday"]
     week
