@@ -1,0 +1,99 @@
+(*
+Задача:
+16 Возвратить true, если в числе есть цифра k, и false — в противном случае
+
+Ввод: целое число
+Вывод: true | false
+*)
+open System
+
+//Возвратить true, если в числе есть цифра k, и false — в противном случае
+let rec CheckNum num k: bool =
+    if ((num % 10 = k)) then
+        true
+    elif (num / 10 = 0) then
+        false
+    else
+        CheckNum (num / 10) k
+
+let InputInteger(msg) : int =
+    let mutable input = false
+    let mutable num = 0
+
+    while not input do
+        printf "%s" msg
+        input <- 
+            try
+                num <- int(Console.ReadLine())
+                true
+            with
+                |exn -> printfn "Число должно быть целым!!!\n"; false
+    if num < 0 then
+        -num
+    else
+        num
+
+let InputNumber(msg) : int =
+    let mutable input = false
+    let mutable num = 0
+
+    while not input do
+        printf "%s" msg
+        input <- 
+            try
+                num <- int(Console.ReadLine())
+                if num < 0 || num > 9 then
+                    printfn "Число должно быть в диапазоне 0-9!!!\n"; false
+                else true
+            with
+                |exn -> printfn "Число должно быть в диапазоне 0-9!!!\n"; false
+    num
+
+[<EntryPoint>]
+let main argv =
+    let num = InputInteger("Введите целое число n: ")
+    let k = InputNumber("Введите цифру k: ")
+    if (CheckNum num k) then
+        printfn "Цифра k есть в данном числе!"
+    else
+        printfn "Цифры k нет в данном числе"
+    0
+
+(*
+|--------------------------------------------------------|
+Test1:
+Введите целое число n: asd
+Число должно быть целым!!!
+
+Введите целое число n: 5.5
+Число должно быть целым!!!
+
+Введите целое число n: -123
+Введите цифру k: asd
+Число должно быть в диапазоне 0-9!!!
+
+Введите цифру k: 5.5
+Число должно быть в диапазоне 0-9!!!
+
+Введите цифру k: 10
+Число должно быть в диапазоне 0-9!!!
+
+Введите цифру k: 2
+Цифра k есть в данном числе!
+|--------------------------------------------------------|
+Test2:
+Введите целое число n: 0123
+Введите цифру k: 0
+Цифры k нет в данном числе
+|--------------------------------------------------------|
+Test3:
+Введите целое число n: 1234567890
+Введите цифру k: 3
+Цифра k есть в данном числе!
+|--------------------------------------------------------|
+Test4:
+Введите целое число n: 0
+Введите цифру k: 0
+Цифра k есть в данном числе!
+|--------------------------------------------------------|
+*)
