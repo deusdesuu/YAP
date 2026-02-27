@@ -16,38 +16,28 @@ let rec CheckNum num k: bool =
     else
         CheckNum (num / 10) k
 
-let InputInteger(msg) : int =
-    let mutable input = false
-    let mutable num = 0
+let rec InputInteger(msg) : int =
+    printf "%s" msg
+    try
+        let num = int(Console.ReadLine())
+        if (num < 0) then
+            -num
+        else
+            num
+    with
+        |exn -> printfn "Число должно быть натуральным!!!\n"; InputInteger(msg)   
 
-    while not input do
-        printf "%s" msg
-        input <- 
-            try
-                num <- int(Console.ReadLine())
-                true
-            with
-                |exn -> printfn "Число должно быть целым!!!\n"; false
-    if num < 0 then
-        -num
-    else
-        num
-
-let InputNumber(msg) : int =
-    let mutable input = false
-    let mutable num = 0
-
-    while not input do
-        printf "%s" msg
-        input <- 
-            try
-                num <- int(Console.ReadLine())
-                if num < 0 || num > 9 then
-                    printfn "Число должно быть в диапазоне 0-9!!!\n"; false
-                else true
-            with
-                |exn -> printfn "Число должно быть в диапазоне 0-9!!!\n"; false
-    num
+let rec InputNumber(msg) : int =
+    printf "%s" msg
+    try
+        let num = int(Console.ReadLine())
+        if (num < 0 || num > 9) then
+                printfn "Цифра должна быть в диапазоне 0-9!!!\n"
+                InputNumber(msg)
+        else
+            num
+    with
+        |exn -> printfn "Цифра должна быть в диапазоне 0-9!!!\n"; InputNumber(msg)  
 
 [<EntryPoint>]
 let main argv =
