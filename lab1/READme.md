@@ -64,4 +64,5 @@
 - GetAt() - получение элемента по номеру: вывод элемента по индексу
 
 ### Тестирование 
-<img width="513" height="251" alt="image" src="https://github.com/user-attachments/assets/4e4cced5-ba60-4977-8d51-0f3b5a749266" />
+<img width="620" height="494" alt="image" src="https://github.com/user-attachments/assets/543efd3d-3417-4a0e-9e13-c516a82d1368" />
+
