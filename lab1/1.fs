@@ -1,4 +1,4 @@
-﻿(*
+(*
 Задача:
 16 Сформировать список из названий дней недели.
 
@@ -8,7 +8,7 @@
 *)
 open System
 
-let week = ["monday"; "tuesday"; "wednesday"; "thursday"; "friday"; "saturday"; "sunday"]
+let week = ["понедельник"; "вторник"; "среда"; "четверг"; "пятница"; "суббота"; "воскресенье"]
 
 let InputNatural(msg) : int =
     let mutable input = false
@@ -81,5 +81,5 @@ Test1:
 Введите день недели 5/5: 5
 
 Результат работы программы:
-monday  tuesday  wednesday  thursday  friday
+понедельник  вторник  среда  четверг  пятница
 *)
