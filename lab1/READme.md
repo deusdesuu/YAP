@@ -23,7 +23,8 @@
 
 ### Тестирование
 
-<img width="441" height="662" alt="image" src="https://github.com/user-attachments/assets/f88e5644-857d-49ba-8559-bbbd1d0c7601" />
+<img width="398" height="780" alt="image" src="https://github.com/user-attachments/assets/15e4cb03-8f7d-4582-bffe-b188b3dc154c" />
+
 
 
 ## Задача 2
