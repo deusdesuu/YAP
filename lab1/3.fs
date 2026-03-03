@@ -19,7 +19,9 @@ let rec InputNatural(msg) : int =
         else
             num
     with
-        |exn -> printfn "Число должно быть натуральным!!!\n"; InputNatural(msg)
+        |exn ->
+            printfn "Число должно быть натуральным!!!\n"
+            InputNatural(msg)
         
 let AddFront(list:list<'T>, elem:'T) : list<'T>  = 
     elem::list
@@ -51,21 +53,36 @@ let GetAt(list:list<'T>, i:int) : 'T =
 [<EntryPoint>]
 let main _ =
     let n = InputNatural("Введите натуральное число n: ")
-    let list = [
+    let list =
+        [
         for i in 1..n do
-            yield InputNatural (sprintf "Введите натуральное число %d/%d: " i 5)
-    ]
+            yield InputNatural
+                      (
+                          sprintf
+                              "Введите натуральное число %d/%d: "
+                              i n
+                      )
+        ]
     printfn "Исходный список: %A" list
     let k = 4
-    printfn "Список после добавления элемента (4) в начало: %A" (AddFront(list, k))
-    printfn "Список после добавления элемента (4) в конец: %A" (AddBack(list, k))
-    printfn "Список после удаления элемента (i = 0): %A" (PopAt(list, 0))
-    printfn "Список после удаления элемента (i = 1): %A" (PopAt(list, 1))
-    printfn "Список после удаления элемента (i = 2): %A" (PopAt(list, 2))
-    printfn "Список для проверки поиска элемента: %A" (list@list)
-    printfn "Поиск элемента (2) в списке: %A" (Search(list@list, list[1]))
-    printfn "Список после конкатенации c самим собой: %A" (Concat(list, list))
-    printfn "Элемент списка по индексу (2): %d" (GetAt(list, 2))
+    printfn "Список после добавления элемента (4) в начало: %A"
+        (AddFront(list, k))
+    printfn "Список после добавления элемента (4) в конец: %A"
+        (AddBack(list, k))
+    printfn "Список после удаления элемента (i = 0): %A"
+        (PopAt(list, 0))
+    printfn "Список после удаления элемента (i = 1): %A"
+        (PopAt(list, 1))
+    printfn "Список после удаления элемента (i = 2): %A"
+        (PopAt(list, 2))
+    printfn "Список для проверки поиска элемента: %A"
+        (list@list)
+    printfn "Поиск элемента (2) в списке: %A"
+        (Search(list@list, list[1]))
+    printfn "Список после конкатенации c самим собой: %A"
+        (Concat(list, list))
+    printfn "Элемент списка по индексу (2): %d"
+        (GetAt(list, 2))
     0
 
 (*
@@ -86,4 +103,5 @@ Test:
 Поиск элемента (2) в списке: [1; 4; 6; 9]
 Список после конкатенации c самим собой: [1; 2; 3; 4; 2; 1; 2; 3; 4; 2]
 Элемент списка по индексу (2): 3
+
 *)
