@@ -1,4 +1,4 @@
-﻿(*
+(*
 Задача:
 16 Сформировать список из названий дней недели.
 
@@ -8,39 +8,39 @@
 *)
 open System
 
-let week = ["monday"; "tuesday"; "wednesday"; "thursday"; "friday"; "saturday"; "sunday"]
+let week = ["понедельник"; "вторник"; "среда"; "четверг"; "пятница"; "суббота"; "воскресенье"]
 
-let InputNatural(msg) : int =
-    let mutable input = false
-    let mutable num = 0
+let rec InputNatural(msg) : int =
+    printf "%s" msg
+    try
+        let num = int(Console.ReadLine())
+        if num <= 0 then
+                printfn "Число должно быть натуральным!!!\n"
+                InputNatural(msg)
+        else
+            num
+    with
+        |exn -> printfn "Число должно быть натуральным!!!\n"; InputNatural(msg)     
+ 
+let rec InputWeekday(msg) : int =
+    printf "%s" msg
+    try
+        let num = int(Console.ReadLine())
+        if (num < 1 || num > 8) then
+                printfn "Число должно быть в диапазоне 1-7!!!\n"
+                InputWeekday(msg)
+        else
+            num
+    with
+        |exn -> printfn "Число должно быть в диапазоне 1-7!!!\n"; InputWeekday(msg)    
 
-    while not input do
-        printf "%s" msg
-        input <- 
-            try
-                num <- int(Console.ReadLine())
-                if num <= 0 then
-                    printfn "Число должно быть натуральным!!!\n"; false
-                else true
-            with
-                |exn -> printfn "Число должно быть натуральным!!!\n"; false
-    num
-
-let Input() : string list =
+let rec Input() : string list =
     let k = InputNatural("Введите желаемое количество дней недели: ")
-    let result = [
-        let mutable i = 1
-        while i < k + 1 do
-            let num = InputNatural(sprintf "Введите день недели %d/%d: " i k)
-            match num with
-            | _ when num < 1 -> printfn "Номер дня должен быть в диапазоне 1-7!!!"; i <- i - 1
-            | _ when num > 7 -> printfn "Номер дня должен быть в диапазоне 1-7!!!"; i <- i - 1
-            | _ -> yield week[num - 1]
-            i <- i + 1
+    [
+        for i in 1..k do
+            yield week[InputWeekday(sprintf "Введите день недели %d/%d: " i k) - 1]
     ]
-    result
-
-
+    
 [<EntryPoint>]
 let main _ =
     let mas = Input()
@@ -48,7 +48,9 @@ let main _ =
     for elem in mas do
         printf "%s  " elem
     0
+
 (*
+
 Test1:
 Введите желаемое количество дней недели: asd
 Число должно быть натуральным!!!
@@ -69,6 +71,7 @@ Test1:
 Введите день недели 1/5: -5
 Число должно быть натуральным!!!
 
+
 Введите день недели 1/5: 0
 Число должно быть натуральным!!!
 
@@ -81,5 +84,5 @@ Test1:
 Введите день недели 5/5: 5
 
 Результат работы программы:
-monday  tuesday  wednesday  thursday  friday
+понедельник  вторник  среда  четверг  пятница
 *)
