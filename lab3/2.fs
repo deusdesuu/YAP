@@ -18,39 +18,39 @@
 open System
 
 
-let rec InputNatural(msg) : int =
+let rec inputNatural(msg) : int =
     printf "%s" msg
     try
         let num = int(Console.ReadLine())
         if num <= 0 then
                 printfn "Число должно быть натуральным!!!\n"
-                InputNatural(msg)
+                inputNatural(msg)
         else
             num
     with
         |exn ->
             printfn "Число должно быть натуральным!!!\n"
-            InputNatural(msg)
+            inputNatural(msg)
 
-let rec InputHexNum(msg:string) : char =
+let rec inputHexNum(msg:string) : char =
     printf "%s" msg
     let c = Console.ReadLine()[0]
     match c with
     |_ when (c >= '0' && c <= '9') -> c
     |_ when (c >= 'A' && c <= 'F') -> c
-    |_ -> (InputHexNum(msg))
+    |_ -> (inputHexNum(msg))
 
-let Input() : seq<char> =
-    let n = InputNatural("Введите натуральное число n: ")
+let input() : seq<char> =
+    let n = inputNatural("Введите натуральное число n: ")
     seq {
         for i in [1..n] do
-            yield InputHexNum(sprintf 
+            yield inputHexNum(sprintf 
             "%d/%d Введите цифру в шестнадцатеричном виде: " i n)
     }
 
 [<EntryPoint>]
 let main _ =
-    let sequence = Input()
+    let sequence = input()
     Seq.fold (fun acc c -> acc + string c) "" sequence
     |> printfn "Шестнадцатеричное число %s"
 
