@@ -1,0 +1,34 @@
+(*
+Задача:
+16. Получить для подкаталогов заданного каталога список кортежей вида
+(название подкаталога, количество файлов в нем). Примечание.
+Количество файлов указывается непосредственно для самого
+подкаталога, исключая вложенные в него другие каталоги.
+*)
+open System.IO
+
+
+let getFiles (path: string) =
+    if Directory.Exists(path) then
+        Directory.GetDirectories(path)
+        |> Array.map (fun dir -> 
+            let fileCount = 
+                Directory.GetFiles(dir)
+                |> Array.length
+            (Path.GetFileName(dir), fileCount))
+        |> Array.toList
+    else
+        printfn "Каталог не существует: %s" path
+        []
+
+[<EntryPoint>]
+let main _ =
+    let pth = "C:\\Users\\valus\\source\\repos\\YAP\\lab3_test\\"
+    printfn "Список подкаталогов с кол-вом файлов: %A"
+        (getFiles(pth))
+    0
+
+(*
+Test:
+Список подкаталогов с кол-вом файлов: [("1", 6); ("2", 5); ("3", 4); ("4", 3)]
+*)
