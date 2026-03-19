@@ -1,0 +1,42 @@
+# Мячин Валентин БАС-2 Лабораторная №4 (вариант 16)
+
+# Задание 1
+
+## Задача 1
+
+### Текст задачи
+
+16. Дерево содержит целые числа. Удалить старший разряд в каждом числе.
+
+### Алгоритм решения
+
+<img width="448" height="294" alt="image" src="https://github.com/user-attachments/assets/723f99f3-fc44-4826-b4d3-b174268c5cb1" />
+
+
+### Тестирование
+
+<img width="259" height="187" alt="image" src="https://github.com/user-attachments/assets/fcb5fcdb-a698-43d9-bd6e-744560225e72" />
+
+
+
+
+
+
+
+## Задача 2
+
+### Текст задачи
+
+16. Дерево содержит строки. Указать узел с максимальным вхождением заданного
+символа.
+
+### Алгоритм решения
+
+<img width="504" height="165" alt="image" src="https://github.com/user-attachments/assets/15c11cac-e4d3-4dbf-8737-54c19ea06678" />
+
+
+### Тестирование
+
+Скриншоты результата работы программы
+
+<img width="412" height="405" alt="image" src="https://github.com/user-attachments/assets/0e90b219-8324-435e-9ac4-a53c269e15d3" />
