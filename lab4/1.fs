@@ -62,7 +62,9 @@ let rec printTreeIn(tree: 't BTree, t: int) : unit =
            printTreeIn(left, t + 1)
            printTreeIn(right, t + 1)
     | Leaf
-        -> ()
+        -> for _ in 1..t do
+               printf "\t"
+           printf "()\n"
 
 
 let printTree(tree: 't BTree) : unit =
@@ -111,17 +113,24 @@ Test:
 Введите количество чисел: 5
 
 Исходное дерево:
--41
-        -146
-                -122
-        129
-                52
+-71
+        -104
+                ()
+                ()
+        -55
+                ()
+                -19
+                        ()
+                        ()
 
 Дерево после Map:
 -1
-        -46
-                -22
-        29
-                2
-
+        -4
+                ()
+                ()
+        -5
+                ()
+                -9
+                        ()
+                        ()
 *)
