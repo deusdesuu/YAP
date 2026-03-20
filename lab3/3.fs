@@ -6,6 +6,7 @@
 подкаталога, исключая вложенные в него другие каталоги.
 *)
 open System.IO
+open System
 
 
 let getFiles (path: string) =
@@ -23,12 +24,16 @@ let getFiles (path: string) =
 
 [<EntryPoint>]
 let main _ =
-    let pth = "C:\\Users\\valus\\source\\repos\\YAP\\lab3_test\\"
+    //C:\\Users\\КИТ-1\\Desktop\\YAP-main\\YAP-main\\lab3_test\\
+    printfn "Введите путь в формате C:\\\\....\\\\:" 
+    let pth = Console.ReadLine()
     printfn "Список подкаталогов с кол-вом файлов: %A"
         (getFiles(pth))
     0
 
 (*
 Test:
+Введите путь в формате C:\\....\\:
+C:\\Users\\КИТ-1\\Desktop\\YAP-main\\YAP-main\\lab3_test\\
 Список подкаталогов с кол-вом файлов: [("1", 6); ("2", 5); ("3", 4); ("4", 3)]
 *)
