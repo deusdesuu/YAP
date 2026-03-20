@@ -51,18 +51,22 @@ let rec insertValue (tree: 't BTree) (n: 't) : 't BTree =
                    Node(data, left, right)
 
 
-let rec printTreeIn(tree: 't BTree) : unit =
+let rec printTreeIn(tree: 't BTree, t: int) : unit =
     match tree with
     | Node(data, left, right)
-        -> printTreeIn(left)
-           printf "%s " data
-           printTreeIn(right)
+        -> for _ in 1..t do
+               printf "\t"
+           printf "%s\n" data
+           printTreeIn(left, t + 1)
+           printTreeIn(right, t + 1)
     | Leaf
-        -> ()
+        -> for _ in 1..t do
+               printf "\t"
+           printf "()\n"
 
 
 let printTree(tree: 't BTree) : unit =
-    printTreeIn(tree)
+    printTreeIn(tree, 0)
     printfn ""
 
 
@@ -142,24 +146,25 @@ let main _ =
     0
 
 (*
-Test 1:
+Test:
 Введите количество строк: 5
 
 Исходное дерево:
-bbacc bbca caeeca ccb dccd
+add
+        ()
+        deaee
+                dcacc
+                        dbe
+                                ()
+                                ()
+                        ()
+                ebeae
+                        ()
+                        ()
 
-Введите символ a-f: b
-Максимальное кол-во символов 'b' в строке: 2
-Список искомых строк: ["bbacc"; "bbca"]
 
+Введите символ a-f: a
+Максимальное кол-во символов 'a' в строке: 1
+Список искомых строк: ["add"; "dcacc"; "deaee"; "ebeae"]
 
-Test 2:
-Введите количество строк: 5
-
-Исходное дерево:
-aaac bceea caa cca eda
-
-Введите символ a-f: f
-Максимальное кол-во символов 'f' в строке: 0
-Список искомых строк: ["aaac"; "bceea"; "caa"; "cca"; "eda"]
 *)
