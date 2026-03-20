@@ -130,7 +130,7 @@ let main _ =
     let c = readChar("\nВведите символ a-f: ")
     let max = findMax(c, tree)
 
-    printfn "Максимальное кол-во символов '%c' в строке: %d" c max
+    printfn "Максимальное кол-во символов '%c' в строке %d" c max
     
     let foldFunc acc item =
         if item 
