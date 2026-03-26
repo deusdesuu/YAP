@@ -15,7 +15,9 @@
 
 ### Тестирование
 
-<img width="259" height="187" alt="image" src="https://github.com/user-attachments/assets/fcb5fcdb-a698-43d9-bd6e-744560225e72" />
+<img width="278" height="526" alt="image" src="https://github.com/user-attachments/assets/55978e49-661a-4420-9e07-580af0e116a8" />
+
+
 
 
 
@@ -39,4 +41,5 @@
 
 Скриншоты результата работы программы
 
-<img width="412" height="405" alt="image" src="https://github.com/user-attachments/assets/0e90b219-8324-435e-9ac4-a53c269e15d3" />
+<img width="456" height="448" alt="image" src="https://github.com/user-attachments/assets/2cc7a809-6a07-47d1-a16c-3083dbe8218e" />
+

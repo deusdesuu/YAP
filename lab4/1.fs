@@ -53,18 +53,22 @@ let rec insertValue (tree: 't BTree) (n: 't) : 't BTree =
                    Node(data, left, right)
 
 
-let rec printTreeIn(tree: 't BTree) : unit =
+let rec printTreeIn(tree: 't BTree, t: int) : unit =
     match tree with
     | Node(data, left, right)
-        -> printTreeIn(left)
-           printf "%d " data
-           printTreeIn(right)
+        -> for _ in 1..t do
+               printf "\t"
+           printf "%d\n" data
+           printTreeIn(left, t + 1)
+           printTreeIn(right, t + 1)
     | Leaf
-        -> ()
+        -> for _ in 1..t do
+               printf "\t"
+           printf "()\n"
 
 
 let printTree(tree: 't BTree) : unit =
-    printTreeIn(tree)
+    printTreeIn(tree, 0)
     printfn ""
 
 
@@ -106,10 +110,27 @@ let main _ =
 
 (*
 Test:
-Введите количество чисел: 10
+Введите количество чисел: 5
 
 Исходное дерево:
--39 -26 -18 16 39 82 92 110 135 143
+-71
+        -104
+                ()
+                ()
+        -55
+                ()
+                -19
+                        ()
+                        ()
+
 Дерево после Map:
--9 -6 -8 6 9 2 2 10 35 43
+-1
+        -4
+                ()
+                ()
+        -5
+                ()
+                -9
+                        ()
+                        ()
 *)
