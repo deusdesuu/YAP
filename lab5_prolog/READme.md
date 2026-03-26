@@ -92,7 +92,7 @@
 <img width="724" height="274" alt="image" src="https://github.com/user-attachments/assets/f57e6169-d3a7-45ba-a3d9-4ed1aec79f5f" />
 
 
-## Задача 3. Решить логическую задачу
+## Задача 4. Решить логическую задачу
 
 ### Текст задачи
 
