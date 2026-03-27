@@ -24,3 +24,8 @@ divisors(N) :-
     divisors_in(N, 1, Res),
     write('Делители числа '), write(N), write(': '), write(Res), nl.
 
+start :-
+    write('Введите натуральное N:'),
+    read(N),
+    integer(N),
+    divisors(N).
