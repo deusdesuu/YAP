@@ -50,3 +50,18 @@ de_morgan_right(U, A, B, Res) :-
     negate(U, A, NotA),
     negate(U, B, NotB),
     intersect(NotA, NotB, Res).
+
+start :-
+    write('Введите универсальное множество U:'),
+    read(U),
+    write('Введите множество A:'),
+    read(A),
+    write('Введите множество B:'),
+    read(B),
+    de_morgan_left(U, A, B, Left),
+    de_morgan_right(U, A, B, Right),
+    write('Левая часть равенства not(A + B): '),
+    write(Left),
+    nl,
+    write('Правая часть равенства not(A) & not(B): '),
+    write(Right).
