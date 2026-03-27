@@ -91,7 +91,8 @@
 
 Скриншоты результата работы программы
 
-<img width="724" height="274" alt="image" src="https://github.com/user-attachments/assets/f57e6169-d3a7-45ba-a3d9-4ed1aec79f5f" />
+<img width="953" height="260" alt="image" src="https://github.com/user-attachments/assets/cfcbbcdd-a87f-46a4-9d67-010d58c59bc7" />
+
 
 
 ## Задача 4. Решить логическую задачу
