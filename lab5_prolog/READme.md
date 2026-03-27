@@ -42,7 +42,8 @@
 
 Скриншоты результата работы программы
 
-<img width="719" height="186" alt="image" src="https://github.com/user-attachments/assets/8051e400-e0ff-490f-bb33-d48e842cd01e" />
+<img width="954" height="301" alt="image" src="https://github.com/user-attachments/assets/4bcfcf5a-1bce-4434-9c97-c3ae7d8df159" />
+
 
 
 
