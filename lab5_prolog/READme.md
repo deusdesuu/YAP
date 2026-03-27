@@ -18,7 +18,8 @@
 
 ### Тестирование
 
-<img width="713" height="231" alt="image" src="https://github.com/user-attachments/assets/d5ab579c-f559-4da0-899e-8d9cfdf7c145" />
+<img width="955" height="353" alt="image" src="https://github.com/user-attachments/assets/53c6d4e5-0f72-42bd-8479-7ac0c1990fe8" />
+
 
 
 
