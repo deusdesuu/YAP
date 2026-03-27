@@ -21,7 +21,13 @@ not_the_same([X|T]) :-
     \+ member(X, T),
     not_the_same(T).
 
-solve(Solution) :-
+print_list([]).
+print_list([E|List]) :-
+	write(E),
+	nl,
+	print_list(List).
+
+start :-
     % Перебираем все варианты назначений
     (Biologist = e ; Biologist = g),
     (Hydrologist = b ; Hydrologist = f),
@@ -41,4 +47,4 @@ solve(Solution) :-
     (member(c, People) -> \+ member(g, People) ; true),
     (member(a, People) -> \+ member(b, People) ; true),
 
-    Solution = [биолог-Biologist, гидролог-Hydrologist, синоптик-Synoptic, радист-Radioman, механик-Mechanic, врач-Doctor].
+    print_list([биолог-Biologist, гидролог-Hydrologist, синоптик-Synoptic, радист-Radioman, механик-Mechanic, врач-Doctor]).
