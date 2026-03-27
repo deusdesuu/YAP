@@ -10,3 +10,10 @@ check_even(_, 0).
 sum_even(List, Sum) :-
     maplist(check_even, List, Tmp),
     sum_list(Tmp, Sum).
+
+start :-
+    write('Введите список целых чисел:'),
+    read(List),
+    sum_even(List, Sum),
+    write('Сумма четных чисел = '),
+    write(Sum).
